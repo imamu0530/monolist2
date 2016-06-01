@@ -8,7 +8,7 @@
     <%# @items.each.with_index(1) do |item,number| %>
     <% @items.each_with_index do |(item, count), rank| %>
         <tr>
-            <td>ランキング<%= rank %>位</td>
+            <td>ランキング<%= rank + 1 %>位</td>
             <td>
               <div class="item-box">
                 <div class="image">
