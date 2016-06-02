@@ -11,8 +11,8 @@ class RankingsController < ApplicationController
   end
   
   def want
-    @want_key = Want.group(:item_id).order('count_all desc').limit(10).count.keys
-    @items = Item.where(id: @want_key)
+    @want_key = Want.group(:item_id).order('count_id desc').limit(10).count(:id)
+    @items = @want_key.transform_keys!{ |key| Item.find(key) }
   end
 
 
